@@ -1,7 +1,7 @@
-package com.curiouswizard.asteroidradar.api
+package com.curiouswizard.asteroidradar.network
 
-import com.curiouswizard.asteroidradar.Asteroid
 import com.curiouswizard.asteroidradar.Constants
+import com.curiouswizard.asteroidradar.model.Asteroid
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
@@ -54,4 +54,23 @@ private fun getNextSevenDaysFormattedDates(): ArrayList<String> {
     }
 
     return formattedDateList
+}
+
+fun getYesterday(): String{
+    val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
+    val endDate = Calendar.getInstance()
+    endDate.add(Calendar.DAY_OF_YEAR, -1)
+    return dateFormat.format(endDate.time)
+}
+
+fun getToday(): String{
+    val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
+    return dateFormat.format(Calendar.getInstance().time)
+}
+
+fun getEndDate(): String{
+    val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
+    val endDate = Calendar.getInstance()
+    endDate.add(Calendar.DAY_OF_YEAR, 7)
+    return dateFormat.format(endDate.time)
 }
