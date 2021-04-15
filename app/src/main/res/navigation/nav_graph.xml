@@ -23,7 +23,7 @@
 
         <argument
             android:name="selectedAsteroid"
-            app:argType="com.curiouswizard.asteroidradar.Asteroid" />
+            app:argType="com.curiouswizard.asteroidradar.model.Asteroid" />
     </fragment>
 
 </navigation>
