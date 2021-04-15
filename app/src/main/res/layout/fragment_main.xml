@@ -27,8 +27,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/this_is_nasa_s_picture_of_day_showing_nothing_yet"
                 android:scaleType="centerCrop"
-                app:srcCompat="@drawable/placeholder_picture_of_day"/>
+                app:imageUrl="@{viewModel.pod.url}"
+                app:podContent="@{viewModel.pod.title}" />
 
             <TextView
                 android:id="@+id/textView"
@@ -47,6 +49,7 @@
             android:id="@+id/asteroid_recycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:apiStatus="@{viewModel.status}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -61,6 +64,7 @@
             android:layout_height="wrap_content"
             android:indeterminate="true"
             android:visibility="gone"
+            app:apiStatus="@{viewModel.status}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
