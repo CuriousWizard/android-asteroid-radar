@@ -5,7 +5,6 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.curiouswizard.asteroidradar.main.NasaApiStatus
@@ -92,13 +91,5 @@ fun bindStatus(progressBar: ProgressBar, status: NasaApiStatus?) {
     when (status) {
         NasaApiStatus.LOADING -> progressBar.visibility = View.VISIBLE
         else -> progressBar.visibility = View.GONE
-    }
-}
-
-@BindingAdapter("apiStatus")
-fun bindRecycleVisibility(recyclerView: RecyclerView, status: NasaApiStatus?) {
-    when (status) {
-        NasaApiStatus.DONE -> recyclerView.visibility = View.VISIBLE
-        else -> recyclerView.visibility = View.GONE
     }
 }
