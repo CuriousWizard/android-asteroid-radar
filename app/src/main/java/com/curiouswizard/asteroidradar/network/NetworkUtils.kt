@@ -7,6 +7,13 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * A function to create an ArrayList of Asteroids.
+ *
+ * @param jsonResult A JSONObject which we received from the API and contains all
+ * information about asteroids
+ * @return It returns with an ArrayList of Asteroids.
+ */
 fun parseAsteroidsJsonResult(jsonResult: JSONObject): ArrayList<Asteroid> {
     val nearEarthObjectsJson = jsonResult.getJSONObject("near_earth_objects")
 
@@ -42,6 +49,9 @@ fun parseAsteroidsJsonResult(jsonResult: JSONObject): ArrayList<Asteroid> {
     return asteroidList
 }
 
+/**
+ * Support function to get an ArrayList of the next seven days
+ */
 private fun getNextSevenDaysFormattedDates(): ArrayList<String> {
     val formattedDateList = ArrayList<String>()
 
@@ -56,6 +66,9 @@ private fun getNextSevenDaysFormattedDates(): ArrayList<String> {
     return formattedDateList
 }
 
+/**
+ * Support functions to get given dates
+ */
 fun getYesterday(): String{
     val dateFormat = SimpleDateFormat(Constants.API_QUERY_DATE_FORMAT, Locale.getDefault())
     val endDate = Calendar.getInstance()

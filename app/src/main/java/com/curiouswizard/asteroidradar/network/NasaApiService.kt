@@ -24,6 +24,9 @@ private val retrofit = Retrofit.Builder()
     .baseUrl(Constants.BASE_URL)
     .build()
 
+/**
+ * Retrofit interface for getting response only in String
+ */
 interface NasaApiService {
     @GET("neo/rest/v1/feed")
     suspend fun getAsteroidsString(
@@ -33,6 +36,9 @@ interface NasaApiService {
     ): String
 }
 
+/**
+ * Retrofit interface for JSON parse using Moshi
+ */
 interface NasaApiJsonService {
     @GET("planetary/apod")
     suspend fun getImageOfTheDay(@Query("api_key")apiKey: String): PictureOfDay

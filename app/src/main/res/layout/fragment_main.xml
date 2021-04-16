@@ -42,14 +42,13 @@
                 android:textSize="20sp"
                 android:layout_gravity="bottom"
                 android:background="#55010613"
-                android:text="@string/image_of_the_day" />
+                android:text="@{viewModel.pod.title}" />
         </FrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/asteroid_recycler"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:apiStatus="@{viewModel.status}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

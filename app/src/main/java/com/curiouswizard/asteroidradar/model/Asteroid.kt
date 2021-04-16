@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity
+@Entity(tableName = "asteroids_table")
 data class Asteroid(
     @PrimaryKey
     val id: Long,
@@ -17,6 +17,4 @@ data class Asteroid(
     val relativeVelocity: Double,
     val distanceFromEarth: Double,
     val isPotentiallyHazardous: Boolean
-) : Parcelable{
-
-}
+) : Parcelable

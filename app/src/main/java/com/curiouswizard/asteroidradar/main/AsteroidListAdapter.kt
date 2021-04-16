@@ -11,8 +11,11 @@ import com.curiouswizard.asteroidradar.R
 import com.curiouswizard.asteroidradar.databinding.AsteroidListItemBinding
 import com.curiouswizard.asteroidradar.model.Asteroid
 
-class AsteroidListAdapter(val clickListener: AsteroidListener) : ListAdapter<Asteroid,AsteroidListAdapter.AsteroidViewHolder>(DiffCallback) {
-
+/**
+ * A ListAdapter to show asteroids with RecycleView
+ */
+class AsteroidListAdapter(private val clickListener: AsteroidListener) :
+        ListAdapter<Asteroid, AsteroidListAdapter.AsteroidViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<Asteroid>() {
         override fun areItemsTheSame(oldItem: Asteroid, newItem: Asteroid): Boolean {
@@ -57,10 +60,11 @@ class AsteroidListAdapter(val clickListener: AsteroidListener) : ListAdapter<Ast
             val LAYOUT = R.layout.asteroid_list_item
         }
     }
-
-
 }
 
+/**
+ * A listener for Asteroids. When user taps on the selected asteroid, it will handle it
+ */
 class AsteroidListener(val clickListener: (selected: Asteroid) -> Unit) {
     fun onClick(asteroid: Asteroid) = clickListener(asteroid)
 }
