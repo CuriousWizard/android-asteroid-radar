@@ -24,7 +24,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@drawable/asteroid_safe" />
+            tools:srcCompat="@drawable/asteroid_safe"
+            tools:ignore="ContentDescription" />
 
         <ScrollView
             android:layout_width="0dp"
@@ -45,6 +46,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/close_approach_data_title"
@@ -52,6 +54,7 @@
 
                     <TextView
                         android:id="@+id/close_approach_date"
+                        style="@style/TextAppearance.MaterialComponents.Body2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
@@ -74,6 +77,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            style="@style/TextAppearance.MaterialComponents.Body1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/absolute_magnitude_title"
@@ -81,6 +85,7 @@
 
                         <TextView
                             android:id="@+id/absolute_magnitude"
+                            style="@style/TextAppearance.MaterialComponents.Body2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
@@ -93,13 +98,14 @@
                         android:id="@+id/help_button"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
                         android:contentDescription="@string/astronomical_unit_explanation_button"
+                        android:padding="16dp"
                         app:srcCompat="@drawable/ic_help_circle" />
 
                 </LinearLayout>
 
                 <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -108,6 +114,7 @@
 
                 <TextView
                     android:id="@+id/estimated_diameter"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -116,6 +123,7 @@
                     tools:text="0.82 km" />
 
                 <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -124,6 +132,7 @@
 
                 <TextView
                     android:id="@+id/relative_velocity"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
@@ -132,6 +141,7 @@
                     tools:text="11.9 km/s" />
 
                 <TextView
+                    style="@style/TextAppearance.MaterialComponents.Body1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -140,15 +150,14 @@
 
                 <TextView
                     android:id="@+id/distance_from_earth"
+                    style="@style/TextAppearance.MaterialComponents.Body2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textColor="@color/white"
                     app:astronomicalUnitText="@{asteroid.distanceFromEarth}"
                     tools:text="0.0924 au" />
-
             </LinearLayout>
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
